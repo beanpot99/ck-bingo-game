@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import { predefinedBoards } from './utils';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -16,26 +16,10 @@ class App extends Component {
     this.resetBoard();
   }
 
-  // Function to generate a new bingo board
   generateBingoBoard() {
-    const bingoBoard = [];
-
-    // Create a 5x5 grid
-    for (let row = 0; row < 5; row++) {
-      const rowData = [];
-      for (let col = 0; col < 5; col++) {
-        // The center cell is marked as "Free"
-        if (row === 2 && col === 2) {
-          rowData.push('Free');
-        } else {
-          // Generate random numbers for other cells
-          rowData.push(this.generateRandomNumber());
-        }
-      }
-      bingoBoard.push(rowData);
-    }
-
-    return bingoBoard;
+    // Randomly select one of the predefined boards
+    const randomIndex = Math.floor(Math.random() * predefinedBoards.length);
+    return predefinedBoards[randomIndex];
   }
   generateRandomNumber() {
     return Math.floor(Math.random() * 75) + 1;
@@ -52,8 +36,6 @@ class App extends Component {
     cellElement.classList.toggle('selected');
   }
 
-
-
   // Function to reset the bingo board
   resetBoard() {
     const cells = this.bingoBoardRef.current.querySelectorAll('.bingo-cell');
@@ -66,7 +48,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <button className="button" onClick={() => this.resetBoard()}>Reset</button>
         <div className="bingo-board" ref={this.bingoBoardRef}>
           {this.state.board.map((row, rowIndex) => (
             <div className="bingo-row" key={rowIndex}>
@@ -82,6 +63,7 @@ class App extends Component {
             </div>
           ))}
         </div>
+        <button className="button" onClick={() => this.resetBoard()}>Reset</button>
       </div>
     );
   }

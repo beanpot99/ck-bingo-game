@@ -19,27 +19,19 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  /* 100% viewport height */
   padding: 20px;
-  /* Adjust as needed */
   max-width: 400px;
-  /* Adjust as needed */
   margin: 0 auto;
-  /* Center horizontally */
 }
 
 .bingo-board {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  /* 5 columns */
   gap: 5px;
-  /* Adjust spacing as needed */
   border: 2px solid #333;
-  /* Add a border around the board */
   padding: 10px;
-  /* Adjust padding as needed */
   background-color: #fff;
-  /* Set the background color */
+  margin-bottom: 10px;
 }
 
 .bingo-cell {
@@ -47,59 +39,65 @@
   align-items: center;
   justify-content: center;
   width: 50px;
-  /* Adjust cell width as needed */
   height: 50px;
-  /* Adjust cell height as needed */
   border: 2px solid #333;
-  /* Add cell borders */
   font-size: 16px;
-  /* Adjust font size as needed */
   cursor: pointer;
 }
 
-/* Add a selected style for clicked cells */
-/* .selected {
-  background-color: #ffcc00;
-  color: #333;
-} */
 .bingo-cell.selected {
-  background-color: #ffcc00; /* Change to your preferred color */
-  box-shadow: inset 0 4px #999; /* Gives a pressed effect */
-  transform: translateY(4px); /* Slightly lowers the cell */
+  background-color: #ffcc00;
+  box-shadow: inset 0 4px #999;
+  transform: translateY(4px);
 }
 
-button {
-  padding: 10px 20px;
-  /* Adjust padding as needed */
-  font-size: 16px;
-  /* Adjust font size as needed */
-  background-color: #333;
-  /* Button background color */
-  color: blue;
-  /* Button text color */
+.button {
+  background-color: lightblue;
+  /* Light blue background */
   border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
   cursor: pointer;
-  margin-top: 10px;
-  /* Adjust margin as needed */
+  transition: background-color 0.3s ease;
+  /* Smooth transition for background color */
+}
+
+.button:hover {
+  background-color: #0099cc;
+  /* Darker blue on hover */
 }
 
 .bingo-cell {
-  /* ... (previous styles) */
   text-align: center;
-  /* Center text horizontally */
-}
-
-button {
-  /* ... (previous styles) */
-  display: block;
-  /* Ensure the button takes up the full width */
-  margin: 0 auto;
-  /* Center button horizontally within the cell */
+  background-color: #e9f2e5;
+  /* Set the cell background color */
+  border-radius: 8px;
+  /* Rounded edges for cells */
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .bingo-board {
-  /* ... (previous styles) */
+  background-color: #a4c991;
+  /* Set the background color */
+  border-radius: 10px;
+  /* Rounded edges for the board */
+  padding: 10px;
+  /* Space inside the board, around the cells */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* Adjust based on your layout */
+  gap: 10px;
+  /* Space between cells */
   transition: box-shadow 0.5s ease-in-out;
+  border: none;
 }
 
 .glowing {
@@ -110,8 +108,6 @@ button {
     0 0 100px 50px rgba(0, 0, 255, 0.5);
 }
 
-/* CSS to style the selected row */
 .bingo-row.selected {
   background-color: #ffcc00;
-  /* Change the background color as desired */
 }
