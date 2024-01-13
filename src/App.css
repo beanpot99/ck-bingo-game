@@ -13,10 +13,6 @@
   color: #888;
 }
 
-body {
-  background-color: white;
-}
-
 .bingo-board {
   position: relative;
   background-color: #a4c991;
@@ -74,6 +70,7 @@ body {
 
 
 .bingo-board.bingo-achieved::before {
+  background-color: white !important;
   content: '';
   position: absolute;
   top: -5px;
