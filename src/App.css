@@ -13,15 +13,8 @@
   color: #888;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 20px;
-  width: 100%;
-  margin: 0 auto;
+body {
+  background-color: white;
 }
 
 .bingo-board {
@@ -43,6 +36,7 @@
 .bingo-cell {
   text-align: center;
   background-color: #e9f2e5;
+  color: black;
   border-radius: 8px;
   border: 2px solid #a4c991 !important;
   display: flex;

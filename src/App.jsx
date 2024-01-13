@@ -88,7 +88,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <div className="bingo-board" ref={this.bingoBoardRef}>
           {this.state.board.map((row, rowIndex) => (
             <div className="bingo-row" key={rowIndex}>
