@@ -86,24 +86,52 @@ class App extends Component {
     this.bingoBoardRef.current.classList.remove('bingo-achieved');
   }
 
+  renderBingoHeader(letter) {
+    let finalLetter;
+    if (letter === "B") {
+      finalLetter = "B";
+    } else if (letter === "I") {
+      finalLetter = "I";
+    } else if (letter === "N") {
+      finalLetter = "N";
+    } else if (letter === "G") {
+      finalLetter = "G";
+    } else if (letter === "O") {
+      finalLetter = "O";
+    }
+    return (
+      <h1 className="bingoHeader">{finalLetter}</h1>
+    )
+  }
   render() {
+    const bingoHeaders = ['B', 'I', 'N', 'G', 'O'];
+
     return (
       <div className="container">
         <div className="bingo-board" ref={this.bingoBoardRef}>
+          <div className="bingo-headers">
+            {bingoHeaders.map((header, index) => (
+              <div key={index} className="bingo-header-cell">
+                <span className="bingo-letter">{header}</span>
+              </div>
+            ))}
+          </div>
           {this.state.board.map((row, rowIndex) => (
-            <div className="bingo-row" key={rowIndex}>
-              {row.map((cell, colIndex) => (
-                <div
-                  key={colIndex}
-                  className={`bingo-cell ${cell === 'Free' ? 'selected free' : ''}`}
-                  onClick={(e) => this.handleCellClick(rowIndex, colIndex, e)}
-                  data-row={rowIndex}
-                  data-col={colIndex}
-                >
-                  {cell}
-                </div>
-              ))}
-            </div>
+            <>
+              <div className="bingo-row" key={rowIndex}>
+                {row.map((cell, colIndex) => (
+                  <div
+                    key={colIndex}
+                    className={`bingo-cell ${cell === 'Free' ? 'selected free' : ''}`}
+                    onClick={(e) => this.handleCellClick(rowIndex, colIndex, e)}
+                    data-row={rowIndex}
+                    data-col={colIndex}
+                  >
+                    {cell}
+                  </div>
+                ))}
+              </div>
+            </>
           ))}
         </div>
         <button className="button" onClick={() => this.resetBoard()}>Reset</button>

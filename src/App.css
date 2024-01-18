@@ -73,10 +73,10 @@
   background-color: white !important;
   content: '';
   position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
   z-index: -1;
   border-radius: 15px;
   background-image: linear-gradient(45deg, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff, #ffc6ff, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff, #ffc6ff, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff, #ffc6ff);
@@ -92,4 +92,46 @@
   100% {
     background-position: 100% 50%;
   }
+}
+
+.bingo-headers {
+  display: contents;
+}
+
+.bingo-header-cell {
+  text-align: center;
+  font-weight: bold;
+  color: #e9f2e5;
+  font-size: 3em;
+  background-color: #a4c991;
+}
+
+@keyframes enlarge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+}
+
+.bingo-achieved .bingo-header-cell:nth-child(1) .bingo-letter {
+  /* B */
+  animation: enlarge 2s linear;
+}
+
+.bingo-achieved .bingo-header-cell:nth-child(2) .bingo-letter {
+  /* I */
+  animation: enlarge 2s linear 0.4s;
+}
+
+.bingo-achieved .bingo-header-cell:nth-child(3) .bingo-letter {
+  /* N */
+  animation: enlarge 2s linear 0.8s;
+}
+
+.bingo-achieved .bingo-header-cell:nth-child(4) .bingo-letter {
+  /* G */
+  animation: enlarge 2s linear 1.2s;
+}
+
+.bingo-achieved .bingo-header-cell:nth-child(5) .bingo-letter {
+  /* O */
+  animation: enlarge 2s linear 1.6s;
 }
