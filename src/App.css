@@ -13,6 +13,9 @@
   color: #888;
 }
 
+.board-wrapper{
+  
+}
 .bingo-board {
   position: relative;
   background-color: #a4c991;
@@ -60,6 +63,7 @@
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
+  margin-top: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   max-width: 100px !important;
@@ -84,6 +88,7 @@
   animation: rotateRainbow 5s linear infinite;
 }
 
+
 @keyframes rotateRainbow {
   0% {
     background-position: 0 50%;
@@ -107,8 +112,15 @@
 }
 
 @keyframes enlarge {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.5); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
 }
 
 .bingo-achieved .bingo-header-cell:nth-child(1) .bingo-letter {
